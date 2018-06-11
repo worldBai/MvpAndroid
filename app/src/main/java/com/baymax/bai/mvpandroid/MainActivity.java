@@ -7,11 +7,11 @@ import android.widget.TextView;
 
 import com.baymax.bai.mvpandroid.base.BaseActivity;
 import com.baymax.bai.mvpandroid.base.BasePresenter;
+import com.baymax.bai.mvpandroid.base.BindPresenter;
 import com.baymax.bai.mvpandroid.presenter.MyPresenter;
 import com.baymax.bai.mvpandroid.view.MyView;
-
+@BindPresenter(MyPresenter.class)
 public class MainActivity extends BaseActivity<MyPresenter> implements MyView {
-    ;
     private TextView helloWorldTv;
 
     @Override

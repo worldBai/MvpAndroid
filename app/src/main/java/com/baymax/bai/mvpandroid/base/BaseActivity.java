@@ -16,7 +16,14 @@ public abstract class BaseActivity <PresenterType extends BasePresenter> extends
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        myPresent = (PresenterType) getPresenter();
+        try {
+            myPresent = (PresenterType) PresenterBuilder.builder(this);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+        ;
         myPresent.attachView(this);
     }
 
